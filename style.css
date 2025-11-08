@@ -1,0 +1,683 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: antiquewhite;
+    scroll-behavior: smooth;
+}
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(67, 69, 71);
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding: 0 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.navbar p{
+    margin-left: 10px;
+    color: white;
+    padding: 27px 0;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
+.navbar img {
+    max-width: 80px;
+    border-radius: 10rem;
+    
+}
+.navlink {
+    list-style-type: none;
+    padding: 0.5rem;
+}
+.navlink li {
+    display: inline-block;
+    padding: 0.5rem;
+}
+.navlink li a {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    font-style: italic;
+}
+.navlink li a:hover {
+    text-decoration: underline;
+}
+.navlink li a.active {
+    color: blue;
+    text-decoration: underline;
+    font-size: 23px;
+}
+.navlink li a.active:hover {
+    color: white;
+    text-decoration: underline;
+    font-size: 23px;
+}
+/* Search box (initially hidden) */
+.search-box {
+  display: block;
+  flex: 1;
+  margin-top: 10px;
+  position: fixed;
+  top: -100px;      /* hidden above viewport */
+  left: 0;
+  right: 0;
+  background-color: rgb(67, 69, 71);
+  padding: 10px 20px;
+  transition: top 1s ease; /* animate top property */
+}
+.search-box.search-box input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* when .show-search is set on navbar slide the box into view */
+.navbar.show-search .search-box {
+  top: 20px; /* show beneath the 100px-high navbar */
+}
+
+/* hide the normal navbar content when search is active */
+.navbar.show-search .navlink,
+.navbar.show-search .logo,
+.navbar.show-search .btn-sub,
+.navbar.show-search .icons,
+.navbar.show-search .burger,
+.navbar.show-search .close {
+  display: none !important;
+}
+
+/* keep search icon clickable if you use a separate class (.search-toggle) */
+/* optional: make search box content centered */
+.navbar.show-search .search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-sub {
+    padding: 10px;
+    background-color: rgb(41, 41, 225);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+}
+.btn-sub:hover {
+    background-color: rgb(17, 17, 177);
+}
+.one {
+    display: none;
+}
+.burger {
+    flex-direction: column;
+    cursor: pointer;
+    display: none;
+}
+.bar {
+    height: 4px;
+    margin: 4px 0;
+    width: 24px;
+    background-color: white;
+}
+.close {
+    display: none;
+}
+.logo {
+    display: flex;
+
+}
+
+.icons{
+      display: none;
+}
+#serch-icon{
+        font-size: 30px;
+        color: white; 
+    }
+   
+     /* hero section */
+.hero-section {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 500px;
+        background-color: antiquewhite;
+        align-items: center;
+        padding: 0 20px;
+        margin-top: 90px;
+        gap: 40px;
+    }
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-left: 40px;
+    }
+.hero-section img {
+    max-width: 450px;
+    margin-right: 10px;
+    border-radius: 30px;
+}
+.btn {
+    display: flex;
+    gap: 10px;
+}
+.btn-hero {
+    width: 20%;
+    background-color: rgb(41, 41, 225);
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-hero:hover {
+     background-color: rgb(28, 28, 168);
+} 
+
+           /* feature-section */
+  .text {
+    text-align: center;
+    font-size: 50px;
+    text-decoration: underline;
+    margin-bottom: -90px;
+    padding-top: 70px;
+    font-weight: bold;
+           }
+.features-section {
+    margin-top: 100px;
+    background-color: lightslategray;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.feature-card {
+   width: 30%;
+   height: 330px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.feature-card img {
+    max-width: 200px;
+    height: 200px;
+    border-radius: 20%;
+
+}
+    /*banner section*/
+.banner-section {
+    width: 100%;
+    height: 400px;
+   background-color: skyblue;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.banner-section h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.banner-section p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn-banner {
+    padding: 10px 20px;
+    background-color: rgb(41, 41, 225);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-banner:hover {
+    background-color: rgb(17, 17, 177);
+}
+  .last-section {
+    width: 100%;
+    height: 220px;
+    background-color: rgb(67, 69, 71);
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding:  0  20px;
+  }
+
+.footer-brand {
+    margin-top: -70px;
+   
+}
+.footer-brand img  {
+    height: 70px;
+    margin-bottom: -60px;
+    border-radius: 50%;
+}
+.footer-brand h4 {
+    color: white;
+    font-size: 24px;
+    margin-left: 90px;
+}
+.footer-brand p {
+    color: white;
+    font-size: 16px;
+}
+.footer-links ul li {
+    list-style-type: none;
+}
+.footer-links ul li  a {
+
+    color: blue;
+    text-decoration: none;
+    font-size: 18px;
+}
+.footer-contact {
+    margin-top: -27px;
+}
+.footer-contact h4 {
+         font-size: 24px;
+          color: white;
+}
+.footer-contact address {
+     font-size: 16px;
+}
+.footer-social h4 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+.footer-social p {
+    font-size: 16px;
+}
+.social-icons {
+    margin-top: 10px;
+    font-size: 20px;
+}
+.social-icons a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    color: blue;
+}
+
+.copy-right {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: blue;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0;
+}
+
+
+
+
+
+
+       /* responsive design */
+@media (max-width:920px) {
+    .navbar img {
+        max-width: 90px;
+        height:80px;
+        margin-top: 10px;
+    }
+    .navbar p {
+        font-size: 16px;
+    }
+    
+    .btn-sub {
+        display: none;
+    }
+    .icons{
+        display: flex; 
+        gap: 20px;   
+    }
+    #serch-icon{
+        font-size: 30px;
+        color: white; 
+    }
+    .burger {
+        display: inline;
+    }
+    .search-box {
+    display: block;
+    flex: 1;
+    margin-top: 10px;
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    background-color: rgb(67, 69, 71);
+    padding: 10px 20px;
+    transition: 1s linear;
+}
+.search-box input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+    
+    .navlink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         background-color: rgb(67, 69, 71);
+         flex-direction: column;
+         width: 70%;
+         height: 100vh;
+         position: fixed;
+         top: 0;
+         right: -670px;
+         line-height: 4;
+         box-shadow: 0 0 5px rgba(0, 0, 0,0.3);
+         transition: 1s linear;
+    }
+    .navlink.act {
+        right: 0;
+    }
+       
+   .navlink .material-symbols-outlined {
+      display: none;  
+    }
+    .close {
+        display: flex;
+        color: white;
+        position: absolute;
+        right: 10px;
+        font-size: 60px;
+        top: -72px;
+        cursor: pointer;
+    }
+    .one {
+        display: flex;
+    }
+    
+/*  hero section */
+    .hero-section {
+        flex-direction: column-reverse;
+         height: 900px;
+         margin-top: 200px;
+
+    }
+    .hero-section img {
+        max-width: 300px;
+        border-radius: 10%;
+    }
+    .hero-text {
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     margin-top: 0px;
+    }
+    .hero-description {
+        margin-top: 300px;
+    }
+    .description-text {
+        margin-top: -180px;
+    }
+    .btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+ .btn-hero {
+    width: 300%;
+   
+ }
+    /* feature section */
+       .text {
+    font-size: 40px;
+    margin-top: 70px;
+       }
+    .features-section {
+     flex-direction: column;
+     justify-content: space-between;
+     padding-top: 20px;
+      height: 950px;
+      padding-bottom: 20px;
+}
+    .feature-card {
+        width: 60%;
+       height: 400px;
+    }
+    .feature-card img {
+    max-width: 150px;
+    height: 150px;
+    padding-top: 10px;
+    }
+    .feature-card h3 {
+    font-size: 17px;
+    }
+    .feature-card p {
+    font-size: 14px;
+    }
+    /* banner section */
+    .banner-section {
+         text-align: center;
+         padding: 0 10px;
+    }
+     /* footer section */
+    .last-section {
+        flex-direction: column;
+       align-items: flex-start;
+        padding: 20px 20px;
+        gap: 10px;
+        height: 590px;
+        margin-top: 80px;
+}
+.footer-brand {
+    margin-top: 0px;
+}
+
+
+}
+ 
+       /* responsive design */
+@media (min-width:921px) {
+  .navbar img {
+    max-width: 70px;
+    border-radius: 10rem;
+    height: 70px;
+    margin-top: 10px;
+    
+}
+  .navbar p{
+    margin-left: 10px;
+    color: white;
+    padding: 27px 0;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
+    
+   .btn-sub {
+    padding: 10px;
+    background-color: rgb(41, 41, 225);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+}
+   .icons{
+      display: none;
+}
+   #serch-icon{
+        font-size: 30px;
+        color: white; 
+    }
+   
+    .burger {
+            display: none;
+    }
+  .search-box {
+  display: block;
+  flex: 1;
+  margin-top: 10px;
+  position: fixed;
+  top: -100px;      /* hidden above viewport */
+  left: 0;
+  right: 0;
+  background-color: rgb(67, 69, 71);
+  padding: 10px 20px;
+  transition: top 1s ease; /* animate top property */
+}
+.search-box.search-box input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+ .navlink li {
+    display: inline-block;
+    padding: 0.5rem;
+}
+    
+   .navlink .material-symbols-outlined {
+      display: inline-block;  
+    }
+   .close {
+    display: none;
+}
+    .one {
+        display: none;
+    }
+    
+/*  hero section */
+   .hero-section {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 500px;
+        background-color: antiquewhite;
+        align-items: center;
+        padding: 0 20px;
+        margin-top: 90px;
+        gap: 40px;
+    }
+    .hero-section img {
+    max-width: 450px;
+    margin-right: 10px;
+    border-radius: 30px;
+}
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-left: 40px;
+    }
+  
+  .btn {
+    display: flex;
+    gap: 10px;
+}
+.btn-hero {
+    width: 20%;
+    background-color: rgb(41, 41, 225);
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}      
+     /* feature-section */
+
+  .text {
+    text-align: center;
+    font-size: 50px;
+    text-decoration: underline;
+    margin-bottom: -90px;
+    padding-top: 70px;
+    font-weight: bold;
+}
+ .features-section {
+    margin-top: 100px;
+    background-color: lightslategray;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.feature-card {
+   width: 30%;
+   height: 330px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+  .feature-card img {
+    max-width: 200px;
+    height: 200px;
+    border-radius: 20%;
+
+}
+      /*banner section*/
+.banner-section {
+    width: 100%;
+    height: 400px;
+    background-image: url(./images/image\ 2.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+  .last-section {
+    width: 100%;
+    height: 220px;
+    background-color: rgb(67, 69, 71);
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding:  0  20px;
+  }
+.footer-brand {
+    margin-top: -70px;
+   
+}
+
+}
